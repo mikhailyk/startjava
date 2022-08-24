@@ -86,15 +86,15 @@ public class IfElseStatementTheme {
 
         System.out.println("\n6. Определение суммы вклада и начисленных банком %");
         double vklad = 300000;
-        double proc;
+        double procent;
         if (vklad < 100000) {
-            proc = 5;
+            procent = 5;
         } else if (vklad <=300000) {
-            proc = 7;
+            procent = 7;
         } else {
-            proc = 10;
+            procent = 10;
         }
-        System.out.println("Сумма вклада: " + vklad + ", процент по вкладу: " + proc + "%, Итоговая сумма: " + (vklad + (vklad * proc) / 100));
+        System.out.println("Сумма вклада: " + vklad + ", процент по вкладу: " + procent + "%, Итоговая сумма: " + (vklad + (vklad * procent) / 100));
 
         System.out.println("\n7. Определение оценки по предметам");
         double hist = 59;
