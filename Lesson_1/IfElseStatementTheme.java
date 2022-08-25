@@ -1,24 +1,27 @@
 public class IfElseStatementTheme {
     public static void main(String[] args) {
         System.out.println("1. Перевод псевдокода на язык Java");
-        int age=18; 
+        int age = 18; 
         if (age > 20) {
             System.out.println("Юность прошла");             
         } else {    
             System.out.println("Да ты еще салага");    
         }
+
         boolean isMale = true; 
         if (!isMale) {
             System.out.println("Женщина...");             
         } else {    
             System.out.println("Мужчина...");    
         } 
+
         float height = 1.74f; 
         if (height < 1.80) {
             System.out.println("Ты лилипут");             
         } else {    
             System.out.println("Ты великан");    
-        }   
+        } 
+
         char firstLetterName = "Mikhail".charAt(0); 
         if (firstLetterName == 'M') {
             System.out.println("Возможно ты Михаил или Маша");             
@@ -72,64 +75,65 @@ public class IfElseStatementTheme {
         }                
 
         System.out.println("\n5. Определение буквы, числа или символа по их коду");   
-        char ch = '\u0057';
-        System.out.println(ch);
-        if ((ch >= 48) && (ch <= 57 )) {
+        char someChar = '\u0057';
+        System.out.println(someChar);
+        if ((someChar >= 48) && (someChar <= 57)) {
             System.out.println("Число");     
-        } else if ((ch >= 65) && (ch <= 90 )) {
+        } else if ((someChar >= 65) && (someChar <= 90)) {
             System.out.println("Большая буква");  
-        } else if ((ch >= 97) && (ch <= 122 )) {
+        } else if ((someChar >= 97) && (someChar <= 122)) {
             System.out.println("Маленькая буква>");   
         } else {
             System.out.println("Не буква и не число");             
         }
 
         System.out.println("\n6. Определение суммы вклада и начисленных банком %");
-        double vklad = 300000;
-        double procent;
-        if (vklad < 100000) {
-            procent = 5;
-        } else if (vklad <=300000) {
-            procent = 7;
+        double deposit = 300000;
+        double percent;
+        if (deposit < 100000) {
+            percent = 5;
+        } else if (deposit <= 300000) {
+            percent = 7;
         } else {
-            procent = 10;
+            percent = 10;
         }
-        System.out.println("Сумма вклада: " + vklad + ", процент по вкладу: " + procent + "%, Итоговая сумма: " + (vklad + (vklad * procent) / 100));
+        System.out.println("Сумма вклада: " + deposit + ", процент по вкладу: " + percent + 
+                            "%, Итоговая сумма: " + (deposit + (deposit * percent) / 100));
 
         System.out.println("\n7. Определение оценки по предметам");
-        double hist = 59;
-        double prog = 91 ;
-        int histScore;
-        int progScore;
-        if (hist <= 60) {
-            histScore = 2;
-        } else if ((hist > 60) && (hist <= 73 )) {
-            histScore = 3;
-        } else if ((hist > 73) && (hist <= 91 )) {
-            histScore = 4;
+        double historyPercent = 59;
+        double programmingPercent = 91;
+        int historyScore;
+        int programmingScore;
+        if (historyPercent <= 60) {
+            historyScore = 2;
+        } else if ((historyPercent > 60) && (historyPercent <= 73)) {
+            historyScore = 3;
+        } else if ((historyPercent > 73) && (historyPercent <= 91)) {
+            historyScore = 4;
         } else {
-            histScore = 5;
+            historyScore = 5;
         }
-        if (prog <= 60) {
-            progScore = 2;
-        } else if ((prog > 60) && (prog <= 73 )) {
-            progScore = 3;
-        } else if ((prog > 73) && (prog <= 91 )) {
-            progScore = 4;
+        if (programmingPercent <= 60) {
+            programmingScore = 2;
+        } else if ((programmingPercent > 60) && (programmingPercent <= 73)) {
+            programmingScore = 3;
+        } else if ((programmingPercent > 73) && (programmingPercent <= 91)) {
+            programmingScore = 4;
         } else {
-            progScore = 5;
+            programmingScore = 5;
         }
-        System.out.println("Оценка: " + histScore + ", предмет: История");
-        System.out.println("Оценка: " + progScore + ", предмет: Программирование");
-        System.out.println("Средняя оценка по предметам: " + ((progScore + histScore) / 2) );
-        System.out.println("Средний процент по предметам: " + ((prog + hist) / 2) + "%");
+        System.out.println("Оценка: " + historyScore + ", предмет: История");
+        System.out.println("Оценка: " + programmingScore + ", предмет: Программирование");
+        System.out.println("Средняя оценка по предметам: " + ((programmingScore + historyScore) / 2));
+        System.out.println("Средний процент по предметам: " + ((programmingPercent + historyPercent) / 2) + "%");
 
         System.out.println("\n8. Расчет прибыли");
-        int arenda = 5000;
+        int rent = 5000;
         int revenue = 13000;
         int cost = 9000;
         // Если в себестоимости не учтена аренда
-        int yearIncome = (revenue - cost - arenda) * 12;
+        int yearIncome = (revenue - cost - rent) * 12;
         // Если в себестоимости учтена аренда
         //int yearIncome = (revenue - cost) * 12;
         if (yearIncome > 0) {

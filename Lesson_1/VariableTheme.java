@@ -55,15 +55,15 @@ public class VariableTheme {
         System.out.println("   переменные после перестановки: num1 = " + num1 + ", num2 = " + num2);        
         System.out.println("б) c помощью арифметических операций");
         System.out.println("   переменные до перестановки: num1 = " + num1 + ", num2 = " + num2);        
-        num1 = num1 + num2;
+        num1 += num2;
         num2 = num1 - num2;
-        num1 = num1 - num2;
+        num1 -= num2;
         System.out.println("   переменные после перестановки: num1 = " + num1 + ", num2 = " + num2);  
         System.out.println("в) c помощью побитовой операции ^");
         System.out.println("   переменные до перестановки: num1 = " + num1 + ", num2 = " + num2);        
-        num1 = num1 ^ num2;
+        num1 ^= num2;
         num2 = num1 ^ num2;
-        num1 = num1 ^ num2;
+        num1 ^= num2;
         System.out.println("   переменные после перестановки: num1 = " + num1 + ", num2 = " + num2);    
         
         System.out.println("\n6. Вывод символов и их кодов");         
