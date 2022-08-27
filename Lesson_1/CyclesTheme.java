@@ -1,18 +1,18 @@
 public class CyclesTheme {
     public static void main(String[] args) {
         System.out.println("\n1. Подсчет суммы четных и нечетных чисел"); 
-        int i = -10;
-        int even = 0; 
-        int odd = 0;
+        int count = -10;
+        int sumEven = 0; 
+        int sumOdd = 0;
         do {
-            if (i % 2 == 0) {
-                even += i;
+            if (count % 2 == 0) {
+                sumEven += count;
             } else {
-                odd += i;
+                sumOdd += count;
             }
-            i++;
-        } while (i <= 21);
-        System.out.println("В промежутке [-10, 21] сумма четных чисел = " + even + ", а нечетных = " + odd);
+            count++;
+        } while (count <= 21);
+        System.out.println("В промежутке [-10, 21] сумма четных чисел = " + sumEven + ", а нечетных = " + sumOdd);
 
         System.out.println("\n2. Вывод чисел в интервале (min и max) в порядке убывания"); 
         int num1 = 10;
@@ -33,47 +33,46 @@ public class CyclesTheme {
         if (num3 < min) {
             min = num3;
         }          
-        for (int k = max; k >= min; k--) {
-            System.out.print(k + " ");
+        for (int i = max - 1; i > min; i--) {
+            System.out.print(i + " ");
         }
 
         System.out.println("\n\n3. Вывод реверсивного числа и суммы его цифр");
         int num = 1234;
-        int sumDigit = 0;
-        int reverseNum = 0;
+        int sumDigits = 0;
+        System.out.print("Исходное число в обратном порядке: ");
         while (num != 0) {
-            int digit = num % 10; // остато от деления на 10;
-            sumDigit += digit;      // сумма цифр
-            reverseNum = reverseNum * 10 + digit; // обратное число
-            num = num / 10;
+            int digit = num % 10; // остаток от деления на 10;
+            sumDigits += digit;      // сумма цифр
+            num /= 10;
+            System.out.print(digit);
         }
-        System.out.println("Исходное число в обратном порядке: " + reverseNum);
-        System.out.println("Сумма цифр: " + sumDigit);        
+        System.out.println("\nСумма цифр: " + sumDigits);        
 
         System.out.println("\n4. Вывод чисел на консоль в несколько строк");
         int countInRow = 0;
-        for (i = 1; i <=24 ; i += 2) {
-            System.out.printf("%3d",i);
+        for (int i = 1; i <= 24 ; i += 2) {
+            System.out.printf("%3d", i);
             countInRow++;
             if (countInRow == 5) {
-                System.out.println("");                
+                System.out.println();                
                 countInRow = 0;
             }
         }
-        for (i = countInRow; (i > 0) & (i <= 5); i++) {
-            System.out.printf("%3d",0);            
+        for (int i = countInRow; (5 - i) > 0; i++) {
+            System.out.printf("%3d", 0);            
         }
 
         System.out.println("\n\n5. Проверка количества единиц на четность");
         num = 3141591;
-        num2 = num;
+        int copyNum = num;
         int sumOnes = 0;
-        while (num2 != 0) {
-            int digit = num2 % 10; // остато от деления на 10;
+        while (copyNum != 0) {
+            int digit = copyNum % 10; // остаток от деления на 10;
             if (digit == 1) {
-                sumOnes += 1;
+                sumOnes++;
             }
-            num2 /= 10;
+            copyNum /= 10;
         } 
         if (sumOnes % 2 == 0) {
             System.out.println("Число " + num +  " содержит " + sumOnes + " (четное) количество единиц");
@@ -82,66 +81,59 @@ public class CyclesTheme {
         }   
 
         System.out.println("\n6. Отображение фигур в консоли"); 
-        char anyChar = '*';
-        for (i = 1; i <= 5; i++) {
+        for (int i = 1; i <= 5; i++) {
             for (int j = 0; j < 10; j++) {
-                System.out.print(anyChar);
+                System.out.print("*");
             }
-            System.out.println("");
+            System.out.println();
         }
 
-        anyChar = '#';
-        i = 5;  
+        int i = 5;  
         while (i > 0) {
             int j = i;
             while (j > 0) {
-                System.out.print(anyChar);
+                System.out.print("#");
                 j--;
             }
-            System.out.println("");
+            System.out.println();
             i--;
         }
 
-        anyChar = '$';
-        i = 1;
-        boolean isTop = false;
+        i = 0;
         do {
-            int j = 0;
-            do {
-                System.out.print(anyChar);
-                j++;
-            } while (j < i);
-            System.out.println("");
-            if (i == 3) {
-                isTop = true;
-            }           
-            if (isTop) {
-                i--;
+            i++;
+            int j;
+            if (i == 4) { 
+                j = 2;
+            } else if (i == 5) {
+                j = 1;
             } else {
-                i++;
+                j = i;
             }
-        } while (i > 0);
+            do {
+                j--;
+                System.out.print("$");
+            } while (j > 0);
+            System.out.println();
+        } while (i < 5);
 
         System.out.println("\n7. Отображение ASCII-символов");
         System.out.println("Dec Char");
-        char someChar;
         for (i = 0; i <= 127; i++) {
-            if (((i < 48) & (i % 2 != 0)) | ((i > 96) & (i < 123) & (i % 2 == 0))) {
-                someChar = (char) i;
-                System.out.printf("%3d %4c",(int) someChar, someChar);
-                System.out.println();
+            if (((i < 48) && (i % 2 != 0)) || ((i > 96) && (i < 123) & (i % 2 == 0))) {
+                System.out.printf("%3d %4c\n", (int) (char) i, (char) i);
             }
         }
         
         System.out.println("\n8. Проверка, является ли число палиндромом");
         num = 1234321;
-        num2 = num;
-        reverseNum = 0;
-        while (num2 != 0) {
-            int digit = num2 % 10; // остато от деления на 10;
+        copyNum = num;
+        int reverseNum = 0;
+        while (copyNum != 0) {
+            int digit = copyNum % 10; // остаток от деления на 10;
             reverseNum = reverseNum * 10 + digit; // обратное число
-            num2 = num2 / 10;
-            System.out.println("Число reverse num  = " + reverseNum);
+            copyNum /= 10;
+            //System.out.println("Число reverse num  = " + reverseNum);
         }
         if (num == reverseNum) {
             System.out.println("Число " + num + " является палиндромом");
