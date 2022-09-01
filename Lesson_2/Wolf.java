@@ -37,7 +37,7 @@ public class Wolf {
         if (age > 8) {
             System.out.println("Некорректный возраст");
         } else {
-        this.age = age;
+            this.age = age;
         }
     }        
 
@@ -49,7 +49,6 @@ public class Wolf {
         this.color = color;
     }
 
-    
     public void move() {
         System.out.println("Идет");    
     }
@@ -69,5 +68,4 @@ public class Wolf {
     public void hunt() {
         System.out.println("Охотится");  
     }
-
 }
