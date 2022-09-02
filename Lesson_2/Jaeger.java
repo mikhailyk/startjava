@@ -7,6 +7,18 @@ public class Jaeger {
     private String weapon;
     //private int armor;
 
+    public Jaeger() {
+        
+    }
+
+    public Jaeger(String modelName, String mark, float height, float weight, String weapon) {
+        this.modelName = modelName;
+        this.mark = mark;
+        this.height = height;
+        this.weight = weight;
+        this.weapon = weapon;
+    }
+
     public void setModelName(String modelName) {
         this.modelName = modelName;
     }
@@ -46,18 +58,6 @@ public class Jaeger {
     public String getWeapon() {
         return weapon;
     }  
-
-    public Jaeger() {
-        
-    }
-
-    public Jaeger(String modelName, String mark, float height, float weight, String weapon) {
-        this.modelName = modelName;
-        this.mark = mark;
-        this.height = height;
-        this.weight = weight;
-        this.weapon = weapon;
-    }
 
     public boolean drift() {
         System.out.println("Вы вошли в дрифт");

@@ -2,24 +2,24 @@ import java.util.Scanner;
 
 public class CalculatorTest {
     public static void main(String[] args) {
-        String continueCalc = "yes";
-        Scanner scanner = new Scanner(System.in);
+        String option = "yes";
+        Scanner console = new Scanner(System.in);
         Calculator calc = new Calculator();
-        while (!continueCalc.equals("no")) {
+        while (!option.equals("no")) {
             System.out.print("Введите первое число: ");
-            calc.setA(scanner.nextInt());
-            scanner.nextLine();
+            calc.setA(console.nextInt());
+            console.nextLine();
             System.out.print("Введите знак математической операции: ");
-            calc.setSign(scanner.next().charAt(0));
+            calc.setSign(console.next().charAt(0));
             System.out.print("Введите второе число: ");
-            calc.setB(scanner.nextInt());
-            scanner.nextLine();
-            calc.getResult();
+            calc.setB(console.nextInt());
+            console.nextLine();
+            calc.calc();
 
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]:");
-                continueCalc = scanner.nextLine();
-            } while (!(continueCalc.equals("no") || continueCalc.equals("yes"))); 
+                option = console.nextLine();
+            } while (!option.equals("no") && !option.equals("yes")); 
         }
     }
 }
