@@ -1,3 +1,5 @@
+package com.startjava.lesson_2_3.guess;
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -11,12 +13,8 @@ public class GuessNumber {
         this.player2 = player2;
     }
 
-    private void setSecretNum() {
-        this.secretNum = new Random().nextInt(100) + 1;
-    }
-
     public void start() {
-        setSecretNum();
+        generateSecretNum();
         while (true) {
             if (isGuessed(player1.getName())) { 
                 break;
@@ -27,11 +25,14 @@ public class GuessNumber {
         }
     }
 
+    private void generateSecretNum() {
+        secretNum = new Random().nextInt(100) + 1;
+    }
+
     private boolean isGuessed(String name) {
         Scanner console = new Scanner(System.in);
-        int playerNum;
         System.out.print("Игрок " + name + " введите число: ");
-        playerNum = console.nextInt();
+        int playerNum = console.nextInt();
         //cons.nextLine();
         if (playerNum < secretNum) {
             System.out.println("Число " + playerNum + " меньше того, что загадал компьютер");
